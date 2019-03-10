@@ -1,0 +1,9 @@
+apiVersion: skaffold/v1beta6
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/multi-k8s-233705/multi-client
+deploy:
+  kubectl:
+    manifests:
+      - ../k8s/client-deployment.yaml
