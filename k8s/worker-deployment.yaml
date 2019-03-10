@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: travisluong/multi-worker
+          image: gcr.io/multi-k8s-233705/multi-worker:latest
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
