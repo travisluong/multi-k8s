@@ -17,17 +17,17 @@ steps:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=multi-cluster'
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: [ 'set', 'image', 'deployments/client-deployment', 'client=gcr.io/$PROJECT_ID/multi-client']
+  args: [ 'set', 'image', 'deployments/client-deployment', 'client=gcr.io/$PROJECT_ID/multi-client:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=multi-cluster'
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: [ 'set', 'image', 'deployments/server-deployment', 'server=gcr.io/$PROJECT_ID/multi-server']
+  args: [ 'set', 'image', 'deployments/server-deployment', 'server=gcr.io/$PROJECT_ID/multi-server:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=multi-cluster'
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: [ 'set', 'image', 'deployments/worker-deployment', 'worker=gcr.io/$PROJECT_ID/multi-worker']
+  args: [ 'set', 'image', 'deployments/worker-deployment', 'worker=gcr.io/$PROJECT_ID/multi-worker:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=multi-cluster'
