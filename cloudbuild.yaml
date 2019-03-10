@@ -6,6 +6,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/multi-worker', './worker']
 - name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/react-test', '-f', './client/Dockerfile.dev', './client']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'run', 'gcr.io/$PROJECT_ID/react-test', 'npm', 'test', '--', '--coverage']
+- name: 'gcr.io/cloud-builders/docker'
   args: [ 'push', 'gcr.io/$PROJECT_ID/multi-client']
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'push', 'gcr.io/$PROJECT_ID/multi-server']
